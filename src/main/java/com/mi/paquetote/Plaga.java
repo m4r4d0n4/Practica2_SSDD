@@ -40,7 +40,7 @@ public class Plaga {
 	public String getURL() {
 		return this.URL;
 	}
-	public String getListSustanciasActivas() {
+	public List<SustanciaActiva> getListSustanciasActivas() {
 		return this.listSustanciasActivas;
 	}
 	//SETs
