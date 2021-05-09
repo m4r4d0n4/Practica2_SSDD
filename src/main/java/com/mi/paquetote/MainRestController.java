@@ -1,10 +1,13 @@
 package com.mi.paquetote;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,7 +22,6 @@ public class MainRestController {
 	private PlagaRepository repPlagas;
 	@Autowired
 	private ProductoRepository repProductos;
-	@Autowired
 	
 	@PostConstruct
 	public void init() {
@@ -44,5 +46,31 @@ public class MainRestController {
 		arr4.add(e1);
 		CategoriaCultivo c1 = new CategoriaCultivo("n", arr4);
 		repCultivos.save(c1);
+	}
+	
+	//GET's listas de elementos
+	@RequestMapping(value = "/categorias_cultivos", method = RequestMethod.GET)
+	public List<CategoriaCultivo> getCategoriasCultivos(){
+		return repCultivos.findAll();
+	}
+	
+	@RequestMapping(value = "/especies", method = RequestMethod.GET)
+	public List<Especie> geEspecies(){
+		return repEspecies.findAll();
+	}
+	
+	@RequestMapping(value = "/productos", method = RequestMethod.GET)
+	public List<Producto> getFitoProductos(){
+		return repProductos.findAll();
+	}
+	
+	@RequestMapping(value = "/plagas", method = RequestMethod.GET)
+	public List<Plaga> getPlagas(){
+		return repPlagas.findAll();
+	}
+	
+	@RequestMapping(value = "/sustancias_activas", method = RequestMethod.GET)
+	public List<SustanciaActiva> getSustanciasActivas(){
+		return repSustancias.findAll();
 	}
 }

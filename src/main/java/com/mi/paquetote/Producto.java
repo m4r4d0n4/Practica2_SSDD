@@ -3,7 +3,6 @@ package com.mi.paquetote;
 import java.util.List;
 
 import javax.persistence.*;
-import org.springframework.data.annotation.Id;
 
 @Entity
 public class Producto {
@@ -12,7 +11,7 @@ public class Producto {
 	private long id;
 	private String nombre;
 	private String URL;
-	@ManyToMany(mappedBy="listFitoProds")
+	@ManyToMany
 	private List<Producto> listaProductos;
 	
 	public Producto (String n, String u) {

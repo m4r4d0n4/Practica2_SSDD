@@ -2,7 +2,6 @@ package com.mi.paquetote;
 
 import java.util.List;
 import javax.persistence.*;
-import org.springframework.data.annotation.Id;
 
 @Entity
 public class CategoriaCultivo {
