@@ -24,6 +24,7 @@ public class Especie{
 		this.nombreCientifico = nc;
 		this.listPlagas = ls;
 	}
+	//Prueba 1
 	
 	public void setNombreVulgar(String nv) {
 		this.nombreVulgar = nv;
