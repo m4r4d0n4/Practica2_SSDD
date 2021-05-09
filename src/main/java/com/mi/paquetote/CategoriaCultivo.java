@@ -7,13 +7,17 @@ import org.springframework.data.annotation.Id;
 @Entity
 public class CategoriaCultivo {
 	@Id
-	private Long id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 	private String nombre;
 	@ManyToMany
 	private List<Especie> listaEspecies;
 	
-	public CategoriaCultivo(String n) {
+	public CategoriaCultivo() {}
+	
+	public CategoriaCultivo(String n, List<Especie> ls) {
 		nombre = n;
+		this.listaEspecies = ls;
 	}
 	
 	public String getNombre() {
