@@ -23,7 +23,7 @@ public class CategoriaCultivo {
 		return nombre;
 	}
 	
-	public List<Especie> listaEspecies () {
+	public List<Especie> getListaEspecies () {
 		return listaEspecies;
 	}
 	

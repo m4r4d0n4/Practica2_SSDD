@@ -19,7 +19,10 @@ public class Especie{
 	//ManyToMany unidireccional (Especie --> Plaga)
 	@ManyToMany
 	private List<Plaga> listPlagas;
-	public Especie() {}
+	
+	public Especie() {
+		
+	}
 	
 	public Especie(String nv, String nc, List<Plaga> ls) {
 		this.nombreVulgar = nv;
