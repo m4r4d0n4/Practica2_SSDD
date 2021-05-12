@@ -63,7 +63,6 @@ public class MainRestController {
 		CategoriaCultivo c3 = new CategoriaCultivo("Tercero	", arr6);
 		repCultivos.save(c3);
 	}
-	
 	//GET's listas de elementos
 	@RequestMapping(value = "/categorias_cultivos", method = RequestMethod.GET)
 	public List<CategoriaCultivo> getCategoriasCultivos(){
@@ -77,6 +76,11 @@ public class MainRestController {
 	@RequestMapping(value = "/especies", method = RequestMethod.GET)
 	public List<Especie> geEspecies(){
 		return repEspecies.findAll();
+	}
+	
+	@RequestMapping(value = "/especies/{nombre}", method = RequestMethod.GET)
+	public List<Plaga> getPlagasEspecieNombre(@PathVariable("nombre") String nombre){
+		return repEspecies.findBynombreVulgar(nombre).getListaPlagas();
 	}
 	
 	@RequestMapping(value = "/productos", method = RequestMethod.GET)
