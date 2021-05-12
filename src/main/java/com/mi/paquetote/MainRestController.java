@@ -478,37 +478,7 @@ public class MainRestController {
 		arrC5.add(especie5);
 		CategoriaCultivo cat5 = new CategoriaCultivo("Cultivos vistosos", arrC5);
 		repCultivos.save(cat5);
-		
-		
-//		
-//		ArrayList<SustanciaActiva> arr2 = new ArrayList<>();
-//		arr2.add(s1);
-//		Plaga pl1 = new Plaga("mosca", "mosca 100cia", "url", arr2);
-//		repPlagas.save(pl1);
-//		ArrayList<Plaga> arr3 = new ArrayList<>();
-//		arr3.add(pl1);
-//		Especie e1 = new Especie("vul", "100cia", arr3);
-//		repEspecies.save(e1);	
-//		ArrayList<Especie> arr4 = new ArrayList<>();
-//		arr4.add(e1);
-//		Especie e2 = new Especie("notvul", "a", arr3);
-//		ArrayList<Especie> arr5 = new ArrayList<>();
-//		arr5.add(e2);
-//		arr5.add(e1);
-//		Especie e3 = new Especie("notnotvul", "a", arr3);
-//		ArrayList<Especie> arr6 = new ArrayList<>();
-//		arr6.add(e3);
-//		repEspecies.save(e2);
-//		repEspecies.save(e3);
-//		CategoriaCultivo c1 = new CategoriaCultivo("Primero", arr4);
-//		repCultivos.save(c1);
-//		CategoriaCultivo c2 = new CategoriaCultivo("Segundo", arr5);
-//		repCultivos.save(c2);
-//		CategoriaCultivo c3 = new CategoriaCultivo("Tercero	", arr6);
-//		repCultivos.save(c3);
 	}
-	
-	
 	
 	//GET's listas de elementos
 	@RequestMapping(value = "/categorias_cultivos", method = RequestMethod.GET)

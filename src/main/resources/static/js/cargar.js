@@ -7,6 +7,7 @@ function borrarListaSustancia() {
 	$('.'+idAux).empty()
 	$("#" + aux).off("click", borrarListaSustancia)
 	$("#" + aux).on("click", expandirSustancia)
+	$("#" + aux).html("[+]")
 }
 
 function expandirSustancia() {
@@ -23,6 +24,7 @@ function expandirSustancia() {
 	})
 	$("#" + aux).off("click", expandirSustancia)
 	$("#" + aux).on("click", borrarListaSustancia)
+	$("#" + aux).html("[-]")
 }
 
 function borrarListaPlaga() {
@@ -32,6 +34,7 @@ function borrarListaPlaga() {
 	$('.'+idAux).empty()
 	$("#" + aux).off("click", borrarListaPlaga)
 	$("#" + aux).on("click", expandirPlaga)
+	$("#" + aux).html("[+]")
 }
 
 function expandirPlaga() {
@@ -49,6 +52,7 @@ function expandirPlaga() {
 	})
 	$("#" + aux).off("click", expandirPlaga)
 	$("#" + aux).on("click", borrarListaPlaga)
+	$("#" + aux).html("[-]")
 }
 
 function borrarListaEspecie() {
@@ -58,6 +62,7 @@ function borrarListaEspecie() {
 	$('.'+idAux).empty()
 	$("#" + aux).off("click", borrarListaEspecie)
 	$("#" + aux).on("click", expandirEspecie)
+	$("#" + aux).html("[+]")
 }
 
 function expandirEspecie() {
@@ -75,6 +80,7 @@ function expandirEspecie() {
 	})
 	$("#" + aux).off("click", expandirEspecie)
 	$("#" + aux).on("click", borrarListaEspecie)
+	$("#" + aux).html("[-]")
 }
 
 function borrarListaCategoria() {
@@ -84,6 +90,7 @@ function borrarListaCategoria() {
 	$('.'+idAux).empty()
 	$("#" + aux).off("click", borrarListaCategoria)
 	$("#" + aux).on("click", expandirCategoria)
+	$("#" + aux).html("[+]")
 }
 
 function expandirCategoria() {
@@ -101,6 +108,7 @@ function expandirCategoria() {
 	})
 	$("#" + aux).off("click", expandirCategoria)
 	$("#" + aux).on("click", borrarListaCategoria)
+	$("#" + aux).html("[-]")
 }
 
 
