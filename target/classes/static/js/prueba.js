@@ -29,7 +29,7 @@ function cargarPlagas(s) {
 	var urlPlagas = "http://localhost:8080/especies/"+encodeURI(s.text());
 	console.log(urlPlagas);
 	s.append($("<ul name = 'listaPlagas'>"));
-	var arbolesPlagas = s.find("ul[name = 'listaPlagas']")
+	var arbolesPlagas = s.find("ul[name = 'listaPlagas']");
 	$.getJSON(urlPlagas,
 		function(plagas) {
 			for(plaga in plagas) {

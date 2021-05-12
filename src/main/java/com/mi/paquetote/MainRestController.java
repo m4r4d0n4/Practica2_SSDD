@@ -69,18 +69,25 @@ public class MainRestController {
 		return repCultivos.findAll();
 	}
 	
-	@RequestMapping(value = "/categorias_cultivos/{nombre}", method = RequestMethod.GET)
-	public List<Especie> getEspeciesCategoriaCultivoNombre(@PathVariable("nombre") String nombre){
-		return repCultivos.findByNombre(nombre).getListaEspecies();
+//	@RequestMapping(value = "/categorias_cultivos/{nombre}", method = RequestMethod.GET)
+//	public List<Especie> getEspeciesCategoriaCultivoNombre(@PathVariable("nombre") String nombre){
+//		return repCultivos.findByNombre(nombre).getListaEspecies();
+//	}
+	
+	@RequestMapping(value = "/categorias_cultivos/{id}", method = RequestMethod.GET)
+	public List<Especie> getEspeciesCategoriaCultivo(@PathVariable("id") long id){
+		
+		return repCultivos.findById(id).get().getListaEspecies();
 	}
+	
 	@RequestMapping(value = "/especies", method = RequestMethod.GET)
 	public List<Especie> geEspecies(){
 		return repEspecies.findAll();
 	}
 	
-	@RequestMapping(value = "/especies/{nombre}", method = RequestMethod.GET)
-	public List<Plaga> getPlagasEspecieNombre(@PathVariable("nombre") String nombre){
-		return repEspecies.findBynombreVulgar(nombre).getListaPlagas();
+	@RequestMapping(value = "/especies/{id}", method = RequestMethod.GET)
+	public List<Plaga> getPlagasEspecieNombre(@PathVariable("id") long id){
+		return repEspecies.findById(id).get().getListaPlagas();
 	}
 	
 	@RequestMapping(value = "/productos", method = RequestMethod.GET)
@@ -88,9 +95,19 @@ public class MainRestController {
 		return repProductos.findAll();
 	}
 	
+	@RequestMapping(value = "/plagas/{id}", method = RequestMethod.GET)
+	public List<SustanciaActiva> getSustanciasPlagas(@PathVariable("id") long id){
+		return repPlagas.findById(id).get().getListSustanciasActivas();
+	}
+	
 	@RequestMapping(value = "/plagas", method = RequestMethod.GET)
 	public List<Plaga> getPlagas(){
 		return repPlagas.findAll();
+	}
+	
+	@RequestMapping(value = "/sustancias_activas/{id}", method = RequestMethod.GET)
+	public List<Producto> getProductosSustancias(@PathVariable("id") long id){
+		return repSustancias.findById(id).get().getListFitoProds();
 	}
 	
 	@RequestMapping(value = "/sustancias_activas", method = RequestMethod.GET)

@@ -25,6 +25,10 @@ public class SustanciaActiva {
 		this.listFitoProds = ls;
 	}
 	
+	public long getId() {
+		return id;
+	}
+	
 	public void setNombre(String n) {
 		this.nombre = n;
 	}

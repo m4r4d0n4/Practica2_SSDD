@@ -31,6 +31,10 @@ public class Especie{
 	}
 	//Prueba 1
 	
+	public long getId() {
+		return id;
+	}
+	
 	public void setNombreVulgar(String nv) {
 		this.nombreVulgar = nv;
 	}

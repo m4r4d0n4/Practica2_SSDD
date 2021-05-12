@@ -23,6 +23,10 @@ public class Producto {
 		URL = u;
 	}
 	
+	public long getId() {
+		return id;
+	}
+	
 	public void setNombre (String n) {
 		nombre = n;
 	}

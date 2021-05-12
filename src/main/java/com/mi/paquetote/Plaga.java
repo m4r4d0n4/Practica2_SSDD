@@ -31,6 +31,10 @@ public class Plaga {
 	}
 	
 	//GETs
+	public long getId() {
+		return id;
+	}
+	
 	public String getNombreVulgar() {
 		return this.nombreVulgar;
 	}

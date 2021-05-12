@@ -19,6 +19,10 @@ public class CategoriaCultivo {
 		this.listaEspecies = ls;
 	}
 	
+	public long getId() {
+		return id;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
