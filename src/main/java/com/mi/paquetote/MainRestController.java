@@ -6,9 +6,11 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 public class MainRestController {
@@ -22,7 +24,7 @@ public class MainRestController {
 	private PlagaRepository repPlagas;
 	@Autowired
 	private ProductoRepository repProductos;
-	
+	 
 	@PostConstruct
 	public void init() {
 		Producto p1 = new Producto("Meh", "url");
