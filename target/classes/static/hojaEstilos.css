@@ -1,5 +1,7 @@
 input.link { background:none;border:none; }
 
+p { display: inline; }
+
 button.link { background:none;border:none; }  
 
 .tooltip {

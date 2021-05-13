@@ -3,7 +3,6 @@ var cont = 0
 function borrarListaSustancia() {
 	var aux = $(this).attr('id')
 	var idAux = $(this).attr('id')
-	console.log("Se borrará el ul asociado al id" + idAux)
 	$('.'+idAux).empty()
 	$("#" + aux).off("click", borrarListaSustancia)
 	$("#" + aux).on("click", expandirSustancia)
@@ -17,7 +16,7 @@ function expandirSustancia() {
 	$.getJSON(urlProducto, function(productos) {
 		for (producto of productos) {
 			$('.' + aux).append(
-				"<li>" + producto.nombre + " <ul class="+cont+"> </ul> </li> "
+				"<li>" + producto.nombre + " " + producto.url + " <ul class="+cont+"> </ul> </li> "
 			)
 			cont = cont + 1
 		}
@@ -30,7 +29,6 @@ function expandirSustancia() {
 function borrarListaPlaga() {
 	var aux = $(this).attr('id')
 	var idAux = $(this).attr('id')
-	console.log("Se borrará el ul asociado al id" + idAux)
 	$('.'+idAux).empty()
 	$("#" + aux).off("click", borrarListaPlaga)
 	$("#" + aux).on("click", expandirPlaga)
@@ -58,7 +56,6 @@ function expandirPlaga() {
 function borrarListaEspecie() {
 	var aux = $(this).attr('id')
 	var idAux = $(this).attr('id')
-	console.log("Se borrará el ul asociado al id" + idAux)
 	$('.'+idAux).empty()
 	$("#" + aux).off("click", borrarListaEspecie)
 	$("#" + aux).on("click", expandirEspecie)
@@ -72,9 +69,9 @@ function expandirEspecie() {
 	$.getJSON(urlPlagas, function(plagas) {
 		for (plaga of plagas) {
 			$('.' + aux).append(
-				"<li> <button id=" + cont + " value="+ plaga.id +" class=link>[+]</button>" + "<p class = p"+ cont +">"+plaga.nombreVulgar+"</p>" + " <ul class="+cont+"> </ul> </li> "
+				"<li> <button id=" + cont + " value="+ plaga.id +" class=link>[+]</button>" + "<p class = p"+ cont +" plinea >"+plaga.nombreVulgar + " "  + plaga.url +"</p>" + " <ul class="+cont+"> </ul> </li> "
 			)
-			$(".p"+cont).easyTooltip({content: "<span style='color:blue;'>"+plaga.nombreCientifico+"</span>", tooltipDir:"right"});
+			$(".p"+cont).easyTooltip({content: "<span style='color:blue;'>"+plaga.nombreCientifico +"</span>", tooltipDir:"right"});
 			$("#" + cont).on('click', expandirPlaga)
 			cont = cont + 1
 		}
@@ -87,7 +84,6 @@ function expandirEspecie() {
 function borrarListaCategoria() {
 	var aux = $(this).attr('id')
 	var idAux = $(this).attr('id')
-	console.log("Se borrará el ul asociado al id" + idAux)
 	$('.'+idAux).empty()
 	$("#" + aux).off("click", borrarListaCategoria)
 	$("#" + aux).on("click", expandirCategoria)
@@ -101,7 +97,7 @@ function expandirCategoria() {
 	$.getJSON(urlEspecies, function(especies) {
 		for (especie of especies) {
 			$('.' + aux).append(
-				"<li> <button id=" + cont + " value="+especie.id+" class=link>[+]</button>" + "<p class = p"+ cont +">"+especie.nombreVulgar+"</p>" + " <ul class="+cont+"> </ul> </li> "
+				"<li> <button id=" + cont + " value="+especie.id+" class=link>[+]</button>" + "<p class = p"+ cont +">"+especie.nombreVulgar + "</p>" + " <ul class="+cont+"> </ul> </li> "
 			)
 			$(".p"+cont).easyTooltip({content: "<span style='color:blue;'>"+especie.nombreCientifico+"</span>", tooltipDir:"right"});
 			$("#" + cont).on('click', expandirEspecie)
@@ -112,7 +108,6 @@ function expandirCategoria() {
 	$("#" + aux).on("click", borrarListaCategoria)
 	$("#" + aux).html("[-]")
 }
-
 
 $(function() {
     var urlCategorias = "http://localhost:8080/categorias_cultivos"
@@ -127,14 +122,13 @@ $(function() {
     })
 })
 
-
 /*
 	v1.0
 	funcional
 	cambios:
-		- nombres más significativos
+		- nombres m?s significativos
 		- mirar los borrar (pillamos dos veces el id)
 		- hacer tooltip (mejorar los <p>)
-		- extra: ver si se puede dhcaer de una forma más limpia
+		- extra: ver si se puede dhcaer de una forma m?s limpia
 		- display: 'inline' en <p>
 */

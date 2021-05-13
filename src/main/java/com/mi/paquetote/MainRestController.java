@@ -120,15 +120,15 @@ public class MainRestController {
 		ArrayList<Producto> arrS4 = new ArrayList<>();
 		arrS4.add(p2);
 		arrS4.add(p3);
-		arrS4.add(p28);
+		arrS4.add(p30);
 		arrS4.add(p10);
 		arrS4.add(p20);
 		SustanciaActiva s4 = new SustanciaActiva("1-naftilacético", arrS4);
 		repSustancias.save(s4);
 		
 		ArrayList<Producto> arrS5 = new ArrayList<>();
-		arrS5.add(p2);
-		arrS5.add(p3);
+		arrS5.add(p6);
+		arrS5.add(p7);
 		arrS5.add(p28);
 		arrS5.add(p9);
 		arrS5.add(p13);
@@ -137,23 +137,24 @@ public class MainRestController {
 		
 		ArrayList<Producto> arrS6 = new ArrayList<>();
 		arrS6.add(p2);
-		arrS6.add(p3);
-		arrS6.add(p28);
+		arrS6.add(p6);
+		arrS6.add(p20);
 		arrS6.add(p9);
 		arrS6.add(p13);
 		SustanciaActiva s6 = new SustanciaActiva("2,4-D", arrS6);
 		repSustancias.save(s6);
 		
 		ArrayList<Producto> arrS7 = new ArrayList<>();
-		arrS7.add(p1);
+		arrS7.add(p30);
 		arrS7.add(p29);
 		arrS7.add(p11);
 		arrS7.add(p12);
+		arrS7.add(p15);
 		SustanciaActiva s7 = new SustanciaActiva("2,4-DB", arrS7);
 		repSustancias.save(s7);
 		
 		ArrayList<Producto> arrS8 = new ArrayList<>();
-		arrS8.add(p1);
+		arrS8.add(p3);
 		arrS8.add(p29);
 		arrS8.add(p13);
 		arrS8.add(p11);
