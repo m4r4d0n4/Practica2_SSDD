@@ -72,8 +72,9 @@ function expandirEspecie() {
 	$.getJSON(urlPlagas, function(plagas) {
 		for (plaga of plagas) {
 			$('.' + aux).append(
-				"<li> <button id=" + cont + " value="+ plaga.id +" class=link>[+]</button>" + plaga.nombreVulgar + " <ul class="+cont+"> </ul> </li> "
+				"<li> <button id=" + cont + " value="+ plaga.id +" class=link>[+]</button>" + "<p class = p"+ plaga.id +">"+plaga.nombreVulgar+"</p>" + " <ul class="+cont+"> </ul> </li> "
 			)
+			$(".p"+plaga.id).easyTooltip({content: "<span style='color:blue;'>"+plaga.nombreCientifico+"</span>", tooltipDir:"right"});
 			$("#" + cont).on('click', expandirPlaga)
 			cont = cont + 1
 		}
@@ -100,8 +101,9 @@ function expandirCategoria() {
 	$.getJSON(urlEspecies, function(especies) {
 		for (especie of especies) {
 			$('.' + aux).append(
-				"<li> <button id=" + cont + " value="+especie.id+" class=link>[+]</button>" + especie.nombreVulgar + " <ul class="+cont+"> </ul> </li> "
+				"<li> <button id=" + cont + " value="+especie.id+" class=link>[+]</button>" + "<p class = p"+ especie.id +">"+especie.nombreVulgar+"</p>" + " <ul class="+cont+"> </ul> </li> "
 			)
+			$(".p"+especie.id).easyTooltip({content: "<span style='color:blue;'>"+especie.nombreCientifico+"</span>", tooltipDir:"right"});
 			$("#" + cont).on('click', expandirEspecie)
 			cont = cont + 1
 		}
@@ -119,8 +121,19 @@ $(function() {
         
         for (categoria of categorias) {
         	lista.append("<li> <button id=" + cont + " value="+categoria.id+" class = link>[+]</button>" + categoria.nombre +"<ul class="+cont+"> </ul> </li> ")
-        	$("#" + cont).on('click',  expandirCategoria)
+        	$("#" + cont).on('click',  expandirCategoria)	
         	cont = cont + 1
         }
     })
 })
+
+
+/*
+	v1.0
+	funcional
+	cambios:
+		- nombres más significativos
+		- mirar los borrar (pillamos dos veces el id)
+		- hacer tooltip
+		- extra: ver si se puede dhcaer de una forma más limpia
+*/
