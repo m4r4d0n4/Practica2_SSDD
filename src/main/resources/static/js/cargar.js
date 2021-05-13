@@ -134,6 +134,7 @@ $(function() {
 	cambios:
 		- nombres más significativos
 		- mirar los borrar (pillamos dos veces el id)
-		- hacer tooltip
+		- hacer tooltip (mejorar los <p>)
 		- extra: ver si se puede dhcaer de una forma más limpia
+		- display: 'inline' en <p>
 */
