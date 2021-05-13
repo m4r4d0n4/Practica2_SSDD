@@ -72,9 +72,9 @@ function expandirEspecie() {
 	$.getJSON(urlPlagas, function(plagas) {
 		for (plaga of plagas) {
 			$('.' + aux).append(
-				"<li> <button id=" + cont + " value="+ plaga.id +" class=link>[+]</button>" + "<p class = p"+ plaga.id +">"+plaga.nombreVulgar+"</p>" + " <ul class="+cont+"> </ul> </li> "
+				"<li> <button id=" + cont + " value="+ plaga.id +" class=link>[+]</button>" + "<p class = p"+ cont +">"+plaga.nombreVulgar+"</p>" + " <ul class="+cont+"> </ul> </li> "
 			)
-			$(".p"+plaga.id).easyTooltip({content: "<span style='color:blue;'>"+plaga.nombreCientifico+"</span>", tooltipDir:"right"});
+			$(".p"+cont).easyTooltip({content: "<span style='color:blue;'>"+plaga.nombreCientifico+"</span>", tooltipDir:"right"});
 			$("#" + cont).on('click', expandirPlaga)
 			cont = cont + 1
 		}
@@ -101,9 +101,9 @@ function expandirCategoria() {
 	$.getJSON(urlEspecies, function(especies) {
 		for (especie of especies) {
 			$('.' + aux).append(
-				"<li> <button id=" + cont + " value="+especie.id+" class=link>[+]</button>" + "<p class = p"+ especie.id +">"+especie.nombreVulgar+"</p>" + " <ul class="+cont+"> </ul> </li> "
+				"<li> <button id=" + cont + " value="+especie.id+" class=link>[+]</button>" + "<p class = p"+ cont +">"+especie.nombreVulgar+"</p>" + " <ul class="+cont+"> </ul> </li> "
 			)
-			$(".p"+especie.id).easyTooltip({content: "<span style='color:blue;'>"+especie.nombreCientifico+"</span>", tooltipDir:"right"});
+			$(".p"+cont).easyTooltip({content: "<span style='color:blue;'>"+especie.nombreCientifico+"</span>", tooltipDir:"right"});
 			$("#" + cont).on('click', expandirEspecie)
 			cont = cont + 1
 		}
