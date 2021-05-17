@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MainRestController {
+	// Declarar repositorios que vamos a utilizar
 	@Autowired
 	private EspecieRepository repEspecies;
 	@Autowired
@@ -28,6 +29,7 @@ public class MainRestController {
 	 
 	@PostConstruct
 	public void init() {
+		// Crear objetos pedidos en el enunciado
 		Producto p1 = new Producto("Microthiol", "urlMicrothiol");
 		repProductos.save(p1);
 		Producto p2 = new Producto("Cobre Nordox 50", "urlCobreNordox");
@@ -485,6 +487,7 @@ public class MainRestController {
 	@RequestMapping(value = "/categorias_cultivos", method = RequestMethod.GET)
 	public List<CategoriaCultivo> getCategoriasCultivos(){
 		List<CategoriaCultivo> listaCategorias = repCultivos.findAll();
+		// Las siguientes líneas son para evitar información innecesaria en el envío del json 
 		List<CategoriaCultivo> listaAux = new ArrayList<>();
 		listaAux.addAll(listaCategorias);
 		for (CategoriaCultivo c: listaAux) {
@@ -495,6 +498,7 @@ public class MainRestController {
 	
 	@RequestMapping(value = "/categorias_cultivos/{id}", method = RequestMethod.GET)
 	public List<Especie> getEspeciesCategoriaCultivo(@PathVariable("id") long id){
+		// Las siguientes líneas son para evitar información innecesaria en el envío del json
 		List<Especie> listaEspecies = repCultivos.findById(id).get().getListaEspecies();
 		List<Especie> listaAux = new ArrayList<>();
 		listaAux.addAll(listaEspecies);
@@ -505,13 +509,14 @@ public class MainRestController {
 		
 	}
 	
-	@RequestMapping(value = "/especies", method = RequestMethod.GET)
-	public List<Especie> geEspecies(){
-		return repEspecies.findAll();
-	}
+//	@RequestMapping(value = "/especies", method = RequestMethod.GET)
+//	public List<Especie> geEspecies(){
+//		return repEspecies.findAll();
+//	}
 	
 	@RequestMapping(value = "/especies/{id}", method = RequestMethod.GET)
 	public List<Plaga> getPlagasEspecieNombre(@PathVariable("id") long id){
+		// Las siguientes líneas son para evitar información innecesaria en el envío del json
 		List<Plaga> listaPlagas = repEspecies.findById(id).get().getListaPlagas();
 		List<Plaga> listaAux = new ArrayList<>();
 		listaAux.addAll(listaPlagas);
@@ -520,15 +525,16 @@ public class MainRestController {
 		}
 		return listaAux;
 	}
-	
-	@RequestMapping(value = "/productos", method = RequestMethod.GET)
-	public List<Producto> getFitoProductos(){
-		return repProductos.findAll();
-	}
+
+//	@RequestMapping(value = "/productos", method = RequestMethod.GET)
+//	public List<Producto> getFitoProductos(){
+//		return repProductos.findAll();
+//	}
 	
 	@RequestMapping(value = "/plagas/{id}", method = RequestMethod.GET)
 	public List<SustanciaActiva> getSustanciasPlagas(@PathVariable("id") long id){
 		List<SustanciaActiva> listaSustancias = repPlagas.findById(id).get().getListSustanciasActivas();
+		// Las siguientes líneas son para evitar información innecesaria en el envío del json
 		List<SustanciaActiva> listaAux = new ArrayList<>();
 		listaAux.addAll(listaSustancias);
 		for (SustanciaActiva s: listaSustancias) {
@@ -537,14 +543,15 @@ public class MainRestController {
 		return listaAux;
 	}
 	
-	@RequestMapping(value = "/plagas", method = RequestMethod.GET)
-	public List<Plaga> getPlagas(){
-		return repPlagas.findAll();
-	}
+//	@RequestMapping(value = "/plagas", method = RequestMethod.GET)
+//	public List<Plaga> getPlagas(){
+//		return repPlagas.findAll();
+//	}
 	
 	@RequestMapping(value = "/sustancias_activas/{id}", method = RequestMethod.GET)
 	public List<Producto> getProductosSustancias(@PathVariable("id") long id){
 		List<Producto> listaProductos = repSustancias.findById(id).get().getListFitoProds();
+		// Las siguientes líneas son para evitar información innecesaria en el envío del json
 		List<Producto> listaAux = new ArrayList<>();
 		listaAux.addAll(listaProductos);
 		for (Producto p: listaProductos) {
@@ -553,8 +560,8 @@ public class MainRestController {
 		return listaAux;
 	}
 	
-	@RequestMapping(value = "/sustancias_activas", method = RequestMethod.GET)
-	public List<SustanciaActiva> getSustanciasActivas(){
-		return repSustancias.findAll();
-	}
+//	@RequestMapping(value = "/sustancias_activas", method = RequestMethod.GET)
+//	public List<SustanciaActiva> getSustanciasActivas(){
+//		return repSustancias.findAll();
+//	}
 }

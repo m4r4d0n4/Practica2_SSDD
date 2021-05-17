@@ -14,9 +14,7 @@ public class Producto {
 	@ManyToMany
 	private List<Producto> listaProductos;
 	
-	public Producto() {
-		
-	}
+	public Producto() {}
 	
 	public Producto (String n, String u) {
 		nombre = n;
