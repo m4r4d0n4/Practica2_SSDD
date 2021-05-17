@@ -1,4 +1,4 @@
-package com.mi.paquetote;
+package com.mi.ssddpr2;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
