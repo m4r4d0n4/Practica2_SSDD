@@ -453,7 +453,7 @@ public class MainRestController {
 		
 		ArrayList<Especie> arrC2 = new ArrayList<>();
 		arrC2.add(especie2);
-		arrC2.add(especie5);
+		arrC2.add(especie4);
 		arrC2.add(especie6);
 		CategoriaCultivo cat2 = new CategoriaCultivo("Cultivos de secano", arrC2);
 		repCultivos.save(cat2);
@@ -483,18 +483,25 @@ public class MainRestController {
 	//GET's listas de elementos
 	@RequestMapping(value = "/categorias_cultivos", method = RequestMethod.GET)
 	public List<CategoriaCultivo> getCategoriasCultivos(){
-		return repCultivos.findAll();
+		List<CategoriaCultivo> listaCategorias = repCultivos.findAll();
+		List<CategoriaCultivo> listaAux = new ArrayList<>();
+		listaAux.addAll(listaCategorias);
+		for (CategoriaCultivo c: listaAux) {
+			c.setListaEspecies(new ArrayList<>());
+		}
+		return listaAux;
 	}
-	
-//	@RequestMapping(value = "/categorias_cultivos/{nombre}", method = RequestMethod.GET)
-//	public List<Especie> getEspeciesCategoriaCultivoNombre(@PathVariable("nombre") String nombre){
-//		return repCultivos.findByNombre(nombre).getListaEspecies();
-//	}
 	
 	@RequestMapping(value = "/categorias_cultivos/{id}", method = RequestMethod.GET)
 	public List<Especie> getEspeciesCategoriaCultivo(@PathVariable("id") long id){
+		List<Especie> listaEspecies = repCultivos.findById(id).get().getListaEspecies();
+		List<Especie> listaAux = new ArrayList<>();
+		listaAux.addAll(listaEspecies);
+		for (Especie e: listaAux) {
+			e.setListPlagas(new ArrayList<>());
+		}
+		return listaAux;
 		
-		return repCultivos.findById(id).get().getListaEspecies();
 	}
 	
 	@RequestMapping(value = "/especies", method = RequestMethod.GET)
@@ -504,7 +511,13 @@ public class MainRestController {
 	
 	@RequestMapping(value = "/especies/{id}", method = RequestMethod.GET)
 	public List<Plaga> getPlagasEspecieNombre(@PathVariable("id") long id){
-		return repEspecies.findById(id).get().getListaPlagas();
+		List<Plaga> listaPlagas = repEspecies.findById(id).get().getListaPlagas();
+		List<Plaga> listaAux = new ArrayList<>();
+		listaAux.addAll(listaPlagas);
+		for (Plaga p: listaPlagas) {
+			p.setListSustanciasActivas(new ArrayList<>());
+		}
+		return listaAux;
 	}
 	
 	@RequestMapping(value = "/productos", method = RequestMethod.GET)
@@ -514,7 +527,13 @@ public class MainRestController {
 	
 	@RequestMapping(value = "/plagas/{id}", method = RequestMethod.GET)
 	public List<SustanciaActiva> getSustanciasPlagas(@PathVariable("id") long id){
-		return repPlagas.findById(id).get().getListSustanciasActivas();
+		List<SustanciaActiva> listaSustancias = repPlagas.findById(id).get().getListSustanciasActivas();
+		List<SustanciaActiva> listaAux = new ArrayList<>();
+		listaAux.addAll(listaSustancias);
+		for (SustanciaActiva s: listaSustancias) {
+			s.setListFitoProds(new ArrayList<>());
+		}
+		return listaAux;
 	}
 	
 	@RequestMapping(value = "/plagas", method = RequestMethod.GET)
@@ -524,7 +543,13 @@ public class MainRestController {
 	
 	@RequestMapping(value = "/sustancias_activas/{id}", method = RequestMethod.GET)
 	public List<Producto> getProductosSustancias(@PathVariable("id") long id){
-		return repSustancias.findById(id).get().getListFitoProds();
+		List<Producto> listaProductos = repSustancias.findById(id).get().getListFitoProds();
+		List<Producto> listaAux = new ArrayList<>();
+		listaAux.addAll(listaProductos);
+		for (Producto p: listaProductos) {
+			p.setListaProductos(new ArrayList<>());
+		}
+		return listaAux;
 	}
 	
 	@RequestMapping(value = "/sustancias_activas", method = RequestMethod.GET)

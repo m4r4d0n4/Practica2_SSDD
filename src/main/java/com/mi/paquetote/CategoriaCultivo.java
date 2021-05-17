@@ -31,4 +31,7 @@ public class CategoriaCultivo {
 		return listaEspecies;
 	}
 	
+	public void setListaEspecies(List<Especie> lista) {
+		listaEspecies = lista;
+	}
 }

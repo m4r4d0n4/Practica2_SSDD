@@ -43,4 +43,7 @@ public class Producto {
 		return URL;
 	}
 	
+	public void setListaProductos(List<Producto> lista) {
+		listaProductos = lista;
+	}
 }
