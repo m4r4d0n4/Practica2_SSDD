@@ -11,8 +11,8 @@ public class Producto {
 	private long id;
 	private String nombre;
 	private String URL;
-	@ManyToMany
-	private List<Producto> listaProductos;
+//	@ManyToMany
+//	private List<Producto> listaProductos;
 	
 	public Producto() {}
 	
@@ -41,7 +41,7 @@ public class Producto {
 		return URL;
 	}
 	
-	public void setListaProductos(List<Producto> lista) {
-		listaProductos = lista;
-	}
+//	public void setListaProductos(List<Producto> lista) {
+//		listaProductos = lista;
+//	}
 }

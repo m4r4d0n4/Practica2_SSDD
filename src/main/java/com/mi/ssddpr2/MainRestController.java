@@ -541,14 +541,15 @@ public class MainRestController {
 	
 	@RequestMapping(value = "/sustancias_activas/{id}", method = RequestMethod.GET)
 	public List<Producto> getProductosSustancias(@PathVariable("id") long id){
-		List<Producto> listaProductos = repSustancias.findById(id).get().getListFitoProds();
+		return repSustancias.findById(id).get().getListFitoProds();
+//		List<Producto> listaProductos = repSustancias.findById(id).get().getListFitoProds();
 		// Las siguientes líneas son para evitar información innecesaria en el envío del json
-		List<Producto> listaAux = new ArrayList<>();
-		listaAux.addAll(listaProductos);
-		for (Producto p: listaProductos) {
-			p.setListaProductos(new ArrayList<>());
-		}
-		return listaAux;
+//		List<Producto> listaAux = new ArrayList<>();
+//		listaAux.addAll(listaProductos);
+//		for (Producto p: listaProductos) {
+//			p.setListaProductos(new ArrayList<>());
+//		}
+//		return listaAux;
 	}
 	
 }
