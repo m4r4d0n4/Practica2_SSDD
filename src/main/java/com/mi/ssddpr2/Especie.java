@@ -10,7 +10,6 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Especie{
-	//ManyToMany unidireccional (Cultivo --> Especie)
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
@@ -29,7 +28,6 @@ public class Especie{
 		this.nombreCientifico = nc;
 		this.listPlagas = ls;
 	}
-	//Prueba 1
 	
 	public long getId() {
 		return id;
