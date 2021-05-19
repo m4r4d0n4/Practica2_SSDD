@@ -1,7 +1,5 @@
 package com.mi.ssddpr2;
 
-import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
