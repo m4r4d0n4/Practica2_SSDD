@@ -6,7 +6,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -509,10 +508,6 @@ public class MainRestController {
 		
 	}
 	
-//	@RequestMapping(value = "/especies", method = RequestMethod.GET)
-//	public List<Especie> geEspecies(){
-//		return repEspecies.findAll();
-//	}
 	
 	@RequestMapping(value = "/especies/{id}", method = RequestMethod.GET)
 	public List<Plaga> getPlagasEspecieNombre(@PathVariable("id") long id){
@@ -542,11 +537,7 @@ public class MainRestController {
 		}
 		return listaAux;
 	}
-	
-//	@RequestMapping(value = "/plagas", method = RequestMethod.GET)
-//	public List<Plaga> getPlagas(){
-//		return repPlagas.findAll();
-//	}
+
 	
 	@RequestMapping(value = "/sustancias_activas/{id}", method = RequestMethod.GET)
 	public List<Producto> getProductosSustancias(@PathVariable("id") long id){
@@ -560,8 +551,4 @@ public class MainRestController {
 		return listaAux;
 	}
 	
-//	@RequestMapping(value = "/sustancias_activas", method = RequestMethod.GET)
-//	public List<SustanciaActiva> getSustanciasActivas(){
-//		return repSustancias.findAll();
-//	}
 }
