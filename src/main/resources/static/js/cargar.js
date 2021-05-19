@@ -16,7 +16,7 @@ function expandirSustancia() {
 	$.getJSON(urlProducto, function(productos) {
 		for (producto of productos) {
 			$('.' + aux).append(
-				"<li>" + producto.nombre + " " + " <ul class="+cont+"> </ul> </li> "
+				"<li>" + producto.nombre + " " + producto.url + " <ul class="+cont+"> </ul> </li> "
 			)
 			cont = cont + 1
 		}
@@ -69,7 +69,7 @@ function expandirEspecie() {
 	$.getJSON(urlPlagas, function(plagas) {
 		for (plaga of plagas) {
 			$('.' + aux).append(
-				"<li> <button id=" + cont + " value="+ plaga.id +" class='link text-light btn btn-warning'>[+]</button>" + "<p class = p"+ cont +" plinea >"+plaga.nombreVulgar + " "   +"</p>" + " <ul class="+cont+"> </ul> </li> "
+				"<li> <button id=" + cont + " value="+ plaga.id +" class='link text-light btn btn-warning'>[+]</button>" + "<p class = p"+ cont +" plinea >"+plaga.nombreVulgar + " "   +"</p>" + plaga.url + " <ul class="+cont+"> </ul> </li> "
 			)
 			$(".p"+cont).easyTooltip({content: "<span style='color:blue;'>"+plaga.nombreCientifico +"</span>", tooltipDir:"right"});
 			$("#" + cont).on('click', expandirPlaga)
@@ -121,15 +121,3 @@ $(function() {
         }
     })
 })
-
-/*
-	v1.0
-	funcional
-	cambios:
-		- se podria añadir el url en el <li>
-		- nombres m?s significativos
-		- mirar los borrar (pillamos dos veces el id)
-		- hacer tooltip (mejorar los <p>)
-		- extra: ver si se puede dhcaer de una forma m?s limpia
-		- display: 'inline' en <p>
-*/
