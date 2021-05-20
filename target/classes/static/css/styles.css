@@ -1,0 +1,71 @@
+.contenedor-arbol, .contenedor-arbol ul, .contenedor-arbol li {
+          position: relative;
+      }
+
+      .contenedor-arbol ul {
+          list-style: none;
+      }
+
+      .contenedor-arbol li::before, .contenedor-arbol li::after {
+          content: "";
+          position: absolute;
+          left: -12px;
+      }
+
+      .contenedor-arbol li::before {
+          border-top: 2px solid green;
+          top: 9px;
+          width: 8px;
+          height: 0;
+      }
+
+      .contenedor-arbol li::after {
+          border-left: 2px solid green;
+          height: 100%;
+          width: 0px;
+          top: 2px;
+      }
+
+      .contenedor-arbol ul > li:last-child::after {
+          height: 8px;
+      }
+
+
+
+
+input.link { background:none;border:none; }
+
+p { display: inline; }
+
+button.link { background:none;border:none; }  
+
+.tooltip {
+padding: 5px;
+font-size: 11px;
+opacity: 0.85;
+filter: alpha(opacity=85);
+background-repeat: no-repeat;
+background-image: url(tooltip.gif);
+}
+.tooltip-inner {
+padding: 5px 10px;
+max-width: 200px;
+pointer-events: none;
+color: white;
+text-align: center;
+background-color: black;
+border-radius: 3px;
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+}
+.tooltip-bottom {
+background-position: top center;
+}
+.tooltip-top {
+background-position: bottom center;
+}
+.tooltip-left {
+background-position: right center;
+}
+.tooltip-right {
+background-position: left center;
+}

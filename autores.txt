@@ -1,0 +1,10 @@
+Cristian Pérez Corral                   09100919A
+Encargado de todo lo relacionado con las clases de sustancia activa y especie. En particular, se encargó de los métodos del rest controller relativos a ambas clases.
+
+Juan Montes Cano                        80107233G
+Encargado de todo lo relacionado con plaga, así como el método rest controller que se relaciona con esta clase.
+
+Héctor Rodrigo Iglesias Goldaracena     50909823J
+Encargado de todo lo relacionado con productos y categorías de cultivos, así como los métodos rest controller relacionados con ambas clases.
+
+Conjuntamente, hemos realizado el CSS con Bootstrap, las anotaciones en las clases para montar la base de datos en H2 y todo el documento js.
